@@ -12,7 +12,7 @@ export default function Footer() {
         <Link href="/centres">Life Campus, Whitfield</Link><Link href="/centres">Willesden, London</Link>
         <a href={SITE.enterpriseCentreUrl}>The Enterprise Centre</a><Link href="/centres">Previous centres</Link></div>
       <div className="col"><p className="h">VSC</p>
-        <Link href="/about">About</Link><Link href="/leadership">Leadership and training</Link><Link href="/news">News</Link><Link href="/privacy">Privacy</Link></div>
+        <Link href="/about">About</Link><Link href="/leadership">Leadership and training</Link><Link href="/news">News</Link><a href="https://governanceministries.org">Governance Ministries</a><Link href="/privacy">Privacy</Link></div>
       <div className="col"><p className="h">Contact</p>
         <p>{SITE.address}</p>
         <a href={`tel:${SITE.phone.replace(/[^\d+]/g, "")}`}>{SITE.phone}</a>
