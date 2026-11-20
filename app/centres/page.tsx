@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CURRENT_CENTRES, TIMELINE, SITE } from "@/lib/site";
+import Link from "next/link";
+import { CURRENT_CENTRES, TIMELINE } from "@/lib/site";
 export const metadata: Metadata = { title: "Charity centres", description: "VSC charity centres at Life Campus, Whitfield and Willesden, London, plus past centres." };
 export default function Centres() {
   return (
@@ -17,7 +18,7 @@ export default function Centres() {
           <article key={t.name}>
             {t.image ? <img src={t.image} alt={t.alt} /> : <div className="ph">Opening April 2027</div>}
             <p className="meta">{t.when}</p><h3>{t.name}</h3><p style={{ color: "var(--body)" }}>{t.body}</p>
-            {!t.image && <a href={SITE.enterpriseCentreUrl}>Visit the Enterprise Centre site</a>}
+            {!t.image && <Link href="/enterprise-centre">Explore the Enterprise Centre</Link>}
           </article>
         ))}
       </div>

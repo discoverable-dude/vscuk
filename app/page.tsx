@@ -44,7 +44,7 @@ export default function Home() {
           <p className="kicker">Opening April 2027</p>
           <h2>The Enterprise Centre at Life Campus</h2>
           <p className="b">Our newest charity centre: over 100 co-working desks, office suites, meeting and training rooms, a podcast suite and a media and event space, built for charities and not-for-profits.</p>
-          <a className="btn navy" href={SITE.enterpriseCentreUrl}>Visit the Enterprise Centre site</a>
+          <Link className="btn navy" href="/enterprise-centre">Explore the Enterprise Centre</Link>
         </div>
         <div className="ph">[Enterprise Centre CGI]</div>
       </section>

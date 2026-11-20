@@ -10,7 +10,7 @@ export default function Footer() {
       </div>
       <div className="col"><p className="h">Centres</p>
         <Link href="/centres">Life Campus, Whitfield</Link><Link href="/centres">Willesden, London</Link>
-        <a href={SITE.enterpriseCentreUrl}>The Enterprise Centre</a><Link href="/centres">Previous centres</Link></div>
+        <Link href="/enterprise-centre">The Enterprise Centre</Link><Link href="/centres">Previous centres</Link></div>
       <div className="col"><p className="h">VSC</p>
         <Link href="/about">About</Link><Link href="/leadership">Leadership and training</Link><Link href="/news">News</Link><a href="https://governanceministries.org">Governance Ministries</a><Link href="/privacy">Privacy</Link></div>
       <div className="col"><p className="h">Contact</p>

@@ -11,11 +11,12 @@ export const SITE = {
   phone: "+44 (0)20 8208 5693",
   address: "226 Church Road, Willesden, London NW10 9NR",
   charityNumber: "[number]", // PLACEHOLDER: legally required on charity sites
-  enterpriseCentreUrl: "https://enterprise-centre.vercel.app", // PLACEHOLDER until the custom domain is attached
+  enterpriseCentrePath: "/enterprise-centre",
 };
 
 export const NAV = [
   { href: "/centres", label: "Charity centres" },
+  { href: "/enterprise-centre", label: "Enterprise Centre" },
   { href: "/leadership", label: "Leadership and training" },
   { href: "/news", label: "News" },
   { href: "/about", label: "About VSC" },
@@ -74,4 +75,27 @@ export const NEWS = [
   { place: "Life Campus", date: "[Date]", title: "The Enterprise Centre opens at Life Campus in April 2027", image: "" , alt: "" }, // PLACEHOLDER date and photo
   { place: "Life Campus", date: "13 June 2016", title: "Life Campus, operated by the Voluntary Sector Centres charity", image: "/images/life-campus.jpg", alt: "Life Campus site plan" },
   { place: "Willesden", date: "17 January 2014", title: "VSC takes on the lease to operate the new studios in Willesden", image: "/images/willesden-studio.jpg", alt: "Studio camera at Willesden" },
+];
+
+// Enterprise Centre at Life Campus. Source: Discoverable Notion project record (Jul to Oct 2026).
+export const EC = {
+  name: "The Enterprise Centre at Life Campus",
+  address: "Life Campus, Mansion Gardens, Whitfield, Dover",
+  opening: "April 2027",
+  membership: { monthly: "£25", annual: "£125" }, // PLACEHOLDER: from intro-call notes ("about £25 a month or £125 a year"); VSC to confirm
+};
+
+export const EC_SPACES = [
+  { slug: "hot-desks", title: "Hot desks", accent: "#40469c", body: "Flexible desks on the ground floor, booked by the hour or the day, for people who need a good place to work without a commitment.", for: "Charity staff, trustees and volunteers who work between sites." },
+  { slug: "permanent-desks", title: "Permanent desks", accent: "#0f7d3e", body: "Your own desk on the upper floors, kept for you every day, in a shared floor with other charities.", for: "Small teams and sole workers who want a settled base." },
+  { slug: "office-suites", title: "Office suites", accent: "#840043", body: "Private suites on monthly or annual contracts, with membership of the centre included. Sized from a small team up to a full office.", for: "Charities that need their own front door and room to grow." },
+  { slug: "meeting-rooms", title: "Meeting and training rooms", accent: "#e71d25", body: "Rooms you can book for trustee meetings, team days and training sessions, with the centre's facilities on hand.", for: "Anyone running a meeting, workshop or course." },
+  { slug: "podcast-suite", title: "Podcast suite", accent: "#f15722", body: "A purpose-built suite for recording podcasts and audio, so charities can tell their story in their own voice.", for: "Charities building an audience through audio." },
+  { slug: "media-space", title: "Media and event space", accent: "#8b8c39", body: "A 200-seat auditorium for events, launches, conferences and filming, next to the studios at Life Campus.", for: "Community groups, charities and media producers." },
+];
+
+export const EC_STEPS = [
+  { title: "Join", body: "Become a member. The centre is for members, so you join first." },
+  { title: "Book", body: "See what is free and book desks, rooms and studios online." },
+  { title: "Work", body: "Arrive, plug in and get on with it, alongside other charities." },
 ];
