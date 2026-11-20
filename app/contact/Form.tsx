@@ -11,8 +11,8 @@ export default function Form() {
       <label htmlFor="message">How can we help?</label><textarea id="message" name="message" rows={6} required />
       <input className="hp" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <p style={{ fontSize: ".9rem" }}>By sending this you agree to our <a href="/privacy">privacy notice</a>.</p>
-      {state && !state.ok && <p role="alert" style={{ color: "#b00020" }}>{state.error}</p>}
-      <button className="btn" type="submit">Send enquiry</button>
+      {state && !state.ok && <p role="alert" style={{ color: "#b00020", fontWeight: 600 }}>{state.error}</p>}
+      <button className="btn blue" type="submit">Send enquiry</button>
     </form>
   );
 }

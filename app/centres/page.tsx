@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { CENTRES } from "@/lib/site";
-export const metadata: Metadata = { title: "Our centres", description: "VSC UK centres for charities and community groups." };
+import { CURRENT_CENTRES, TIMELINE, SITE } from "@/lib/site";
+export const metadata: Metadata = { title: "Charity centres", description: "VSC charity centres at Life Campus, Whitfield and Willesden, London, plus past centres." };
 export default function Centres() {
   return (
-    <section className="block"><div className="wrap">
-      <h1>Our centres</h1>
-      <p className="note">Only the Enterprise Centre is listed. The five existing centres need names, locations and copy.</p>
-      <div className="grid">{CENTRES.map(c => (
-        <article className="card" key={c.slug}>
-          <span className="tag">{c.status === "open" ? "Open" : "Opening soon"}</span>
-          <h2 style={{ fontSize: "1.4rem" }}>{c.name}</h2>
-          <p>{c.place}</p><p>{c.summary}</p>
-          {c.link && <a href={c.link}>Visit the centre site</a>}
-        </article>))}</div>
-    </div></section>
+    <section className="page wrap">
+      <h1>Charity centres</h1>
+      <div className="centres" style={{ marginBottom: 64 }}>
+        {CURRENT_CENTRES.map(c => (
+          <article className="ccard" key={c.name}><img src={c.image} alt={c.alt} />
+            <div className="in"><h3>{c.name}</h3><p>{c.body}</p><div className="pills">{c.tenants.map(t => <span key={t}>{t}</span>)}</div></div></article>
+        ))}
+      </div>
+      <h2 className="t" style={{ marginBottom: 24 }}>Past and upcoming centres</h2>
+      <div className="news">
+        {TIMELINE.map(t => (
+          <article key={t.name}>
+            {t.image ? <img src={t.image} alt={t.alt} /> : <div className="ph">Opening April 2027</div>}
+            <p className="meta">{t.when}</p><h3>{t.name}</h3><p style={{ color: "var(--body)" }}>{t.body}</p>
+            {!t.image && <a href={SITE.enterpriseCentreUrl}>Visit the Enterprise Centre site</a>}
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

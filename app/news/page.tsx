@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-export const metadata: Metadata = { title: "News", description: "News and updates from VSC UK." };
+import { NEWS } from "@/lib/site";
+export const metadata: Metadata = { title: "News", description: "News from VSC charity centres." };
 export default function News() {
   return (
-    <section className="block"><div className="wrap prose">
-      <h1>News</h1>
-      <p>Updates from our centres will appear here. PLACEHOLDER: connect to Sanity (or markdown) when a CMS decision is made.</p>
-    </div></section>
+    <section className="page wrap">
+      <h1>News from our centres</h1>
+      <div className="news">{NEWS.map(n => (
+        <article key={n.title}>{n.image ? <img src={n.image} alt={n.alt} /> : <div className="ph">[Enterprise Centre build photo]</div>}
+          <p className="meta">{n.place}. {n.date}</p><h3>{n.title}</h3></article>))}</div>
+    </section>
   );
 }

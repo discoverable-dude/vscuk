@@ -1,13 +1,22 @@
 import Link from "next/link";
-import { SITE, NAV } from "@/lib/site";
+import { SITE } from "@/lib/site";
 export default function Footer() {
   return (
-    <footer className="site">
-      <div className="wrap cols">
-        <div><strong>{SITE.name}</strong><p>Registered charity no. {SITE.charityNumber}</p></div>
-        <div><strong>Contact</strong><p><a href={`mailto:${SITE.email}`}>{SITE.email}</a><br /><a href={`tel:${SITE.phone.replace(/\s/g, "")}`}>{SITE.phone}</a></p></div>
-        <div><strong>Explore</strong><p>{NAV.map(n => <span key={n.href}><Link href={n.href}>{n.label}</Link><br /></span>)}<Link href="/privacy">Privacy</Link></p></div>
+    <footer className="ftr wrap">
+      <div className="col">
+        <img src="/images/vsc-logo.png" alt="VSC United Kingdom" width={150} height={50} />
+        <p>{SITE.fullName}. {SITE.tagline}</p>
+        <p className="small">Registered charity no. {SITE.charityNumber}</p>
       </div>
+      <div className="col"><p className="h">Centres</p>
+        <Link href="/centres">Life Campus, Whitfield</Link><Link href="/centres">Willesden, London</Link>
+        <a href={SITE.enterpriseCentreUrl}>The Enterprise Centre</a><Link href="/centres">Previous centres</Link></div>
+      <div className="col"><p className="h">VSC</p>
+        <Link href="/about">About</Link><Link href="/leadership">Leadership and training</Link><Link href="/news">News</Link><Link href="/privacy">Privacy</Link></div>
+      <div className="col"><p className="h">Contact</p>
+        <p>{SITE.address}</p>
+        <a href={`tel:${SITE.phone.replace(/[^\d+]/g, "")}`}>{SITE.phone}</a>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
     </footer>
   );
 }

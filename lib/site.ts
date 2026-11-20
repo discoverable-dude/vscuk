@@ -1,46 +1,77 @@
-// CONTENT STATUS: everything marked PLACEHOLDER needs confirming with John Fleming (VSC UK)
-// before launch. Facts below come from the Discoverable Notion records, not the live site.
+// Copy and facts come from the approved homepage concept (Design canvas) and the Discoverable Notion records.
+// Items still marked [PLACEHOLDER] need confirming with VSC UK before launch.
 export const SITE = {
   name: "VSC UK",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vscuk.org", // PLACEHOLDER: confirm domain
-  tagline: "Centres where charities and communities grow together", // PLACEHOLDER
+  fullName: "Voluntary Sector Centres",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vscuk.org",
+  tagline: "Working with the charity sector to build a better world.",
   description:
-    "VSC UK is a registered charity that creates centres where third sector organisations, charities and community groups work side by side.", // PLACEHOLDER
-  email: "john@vscuk.org", // from sales record; swap for a general inbox
-  phone: "0796 9951962", // from sales record; confirm public number
-  charityNumber: "PLACEHOLDER", // legally required on charity sites
+    "Since 2004, VSC has helped charities become more effective, efficient and economical. We house them in shared charity centres at lower rents, and we train and coach the people who lead them.",
+  email: "info@vscuk.org",
+  phone: "+44 (0)20 8208 5693",
+  address: "226 Church Road, Willesden, London NW10 9NR",
+  charityNumber: "[number]", // PLACEHOLDER: legally required on charity sites
+  enterpriseCentreUrl: "https://enterprise-centre.vercel.app", // PLACEHOLDER until the custom domain is attached
 };
 
 export const NAV = [
-  { href: "/about", label: "About" },
-  { href: "/centres", label: "Our centres" },
-  { href: "/services", label: "Work with us" },
+  { href: "/centres", label: "Charity centres" },
+  { href: "/leadership", label: "Leadership and training" },
   { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About VSC" },
 ];
 
-export type Centre = {
-  slug: string; name: string; place: string; status: "open" | "opening-soon";
-  summary: string; link?: string;
-};
+export const STATS = [
+  { value: "2004", label: "Working with the charity sector since" },
+  { value: "80", label: "Charities housed in our centres" },
+  { value: "Up to 50%", label: "Below standard commercial rent per square foot" },
+];
 
-// Six centres in total per the sales record; only the sixth is known.
-export const CENTRES: Centre[] = [
+export const CURRENT_CENTRES = [
   {
-    slug: "enterprise-centre",
-    name: "The Enterprise Centre at Life Campus",
-    place: "Mansion Gardens, Whitfield, Dover",
-    status: "opening-soon",
-    summary:
-      "A 100+ desk co-working venue on a 6-acre campus, with hot desks, office suites, meeting and training rooms, a podcast suite and a 200-seat media and events space. Opening April 2027.",
-    link: "https://enterprise-centre.vercel.app",
+    name: "Life Campus, Whitfield, Dover",
+    image: "/images/life-campus.jpg",
+    alt: "Site plan of Life Campus, Whitfield",
+    body: "A six-acre site where VSC is one of the landlords, alongside Dover Port Authority, Mansion Garden Estates and Governance Ministries Charitable Trust.",
+    tenants: ["Graceworks Ministries", "Kingdom Preschool", "Living Well Church", "Phoenix Community Care", "Burn Dover"],
+    link: "About Life Campus",
   },
-  // PLACEHOLDER: add the five existing VSC UK centres once names and locations are supplied.
+  {
+    name: "Willesden, London",
+    image: "/images/willesden-studio.jpg",
+    alt: "Camera in the Willesden studios",
+    body: "32,000 square feet over three floors, operated by VSC since 2013. A church and television studio facility with a 200-seat auditorium for live filming.",
+    tenants: ["TBN UK", "TBN Europe", "Nejat TV", "Alhoreya"],
+    link: "About Willesden",
+  },
 ];
 
-export const SERVICES = [
-  { title: "Desks and offices", body: "Hot desks, permanent desks and office suites for charities and not-for-profits, from a single desk to a full suite." },
-  { title: "Meeting and training rooms", body: "Bookable rooms for team days, trustee meetings and training." },
-  { title: "Media and events", body: "A podcast suite and a 200-seat auditorium for recordings, launches and community events." },
-  { title: "Community", body: "A neighbourhood of like-minded organisations sharing space, skills and ideas." },
+export const TIMELINE = [
+  { when: "2004 to 2011", name: "Charles' House", image: "/images/charles-house.jpg", alt: "Charles' House, Kensington", body: "Kensington High Street. 35,000 sq ft, over 50 charities." },
+  { when: "2004 to 2011", name: "Royal London House", image: "/images/royal-london-house.jpg", alt: "Royal London House, Finsbury Square", body: "Finsbury Square. 17,000 sq ft." },
+  { when: "2004 to 2011", name: "The Merchant Centre", image: "/images/merchant-centre.jpg", alt: "The Merchant Centre, New Street Square", body: "1 New Street Square, EC4. 33,000 sq ft." },
+  { when: "2004 to 2011", name: "Hillgate House", image: "/images/hillgate-house.jpg", alt: "Hillgate House, Hillgate Street", body: "Hillgate Street, W8. 28,500 sq ft." },
+  { when: "2013", name: "Willesden", image: "/images/willesden.jpg", alt: "Willesden charity centre", body: "226 Church Road, NW10. 32,000 sq ft." },
+  { when: "2016", name: "Life Campus", image: "/images/life-campus.jpg", alt: "Life Campus site plan", body: "Whitfield, Dover. A six-acre site." },
+  { when: "2027", name: "The Enterprise Centre", image: "", alt: "", body: "Life Campus. Co-working and media space." },
+];
+
+export const STEPS = [
+  { title: "We listen", body: "We work out what a charity actually needs from a building before we look for one." },
+  { title: "We secure the building", body: "A minimum five-year lease without a right to terminate, or we buy the freehold." },
+  { title: "You move in", body: "Office space with integrated services, alongside other charities, at a lower rent." },
+];
+
+export const LEADERSHIP = [
+  "Strategic support for leadership teams",
+  "Coaching",
+  "Leadership development programmes",
+  "Training programmes for teams",
+  "Keynote speakers on leading teams",
+];
+
+export const NEWS = [
+  { place: "Life Campus", date: "[Date]", title: "The Enterprise Centre opens at Life Campus in April 2027", image: "" , alt: "" }, // PLACEHOLDER date and photo
+  { place: "Life Campus", date: "13 June 2016", title: "Life Campus, operated by the Voluntary Sector Centres charity", image: "/images/life-campus.jpg", alt: "Life Campus site plan" },
+  { place: "Willesden", date: "17 January 2014", title: "VSC takes on the lease to operate the new studios in Willesden", image: "/images/willesden-studio.jpg", alt: "Studio camera at Willesden" },
 ];
